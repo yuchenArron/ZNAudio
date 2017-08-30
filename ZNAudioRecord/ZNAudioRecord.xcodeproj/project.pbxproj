@@ -1,0 +1,809 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0404E6F21F55677D004E96FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E6F11F55677D004E96FE /* main.m */; };
+		0404E6F51F55677D004E96FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E6F41F55677D004E96FE /* AppDelegate.m */; };
+		0404E6F81F55677D004E96FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E6F71F55677D004E96FE /* ViewController.m */; };
+		0404E6FB1F55677D004E96FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404E6F91F55677D004E96FE /* Main.storyboard */; };
+		0404E6FD1F55677D004E96FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0404E6FC1F55677D004E96FE /* Assets.xcassets */; };
+		0404E7001F55677D004E96FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404E6FE1F55677D004E96FE /* LaunchScreen.storyboard */; };
+		0404E70B1F55677D004E96FE /* ZNAudioRecordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E70A1F55677D004E96FE /* ZNAudioRecordTests.m */; };
+		0404E7161F55677D004E96FE /* ZNAudioRecordUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E7151F55677D004E96FE /* ZNAudioRecordUITests.m */; };
+		0404E7291F556BF5004E96FE /* SpectrumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E7281F556BF5004E96FE /* SpectrumView.m */; };
+		0404E72E1F556D1A004E96FE /* ZZAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E72B1F556D1A004E96FE /* ZZAudioPlayerUtil.m */; };
+		0404E72F1F556D1A004E96FE /* ZZAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E72D1F556D1A004E96FE /* ZZAudioRecorderUtil.m */; };
+		0404E7321F55713B004E96FE /* ZNRecordUploadNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E7311F55713B004E96FE /* ZNRecordUploadNetwork.m */; };
+		0404E7341F5571DC004E96FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0404E7331F5571DC004E96FE /* CoreGraphics.framework */; };
+		0404E7371F557C6F004E96FE /* ZNAudioRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0404E7361F557C6F004E96FE /* ZNAudioRecordManager.m */; };
+		043A23C01F5658F600E0153F /* ZZDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 043A23BF1F5658F600E0153F /* ZZDeviceManager.m */; };
+		9085EECD5D81EBA57C8A68CC /* libPods-ZNAudioRecordTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B61071F7B4FD1809580C6F21 /* libPods-ZNAudioRecordTests.a */; };
+		99FDB53D4ED53E3D88373298 /* libPods-ZNAudioRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8455019C18CF898DB8C52564 /* libPods-ZNAudioRecord.a */; };
+		F224B570DD8105416CC66583 /* libPods-ZNAudioRecordUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B90DB6CBF3A23509A112B /* libPods-ZNAudioRecordUITests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0404E7071F55677D004E96FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0404E6E51F55677D004E96FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0404E6EC1F55677D004E96FE;
+			remoteInfo = ZNAudioRecord;
+		};
+		0404E7121F55677D004E96FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0404E6E51F55677D004E96FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0404E6EC1F55677D004E96FE;
+			remoteInfo = ZNAudioRecord;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0404E6ED1F55677D004E96FE /* ZNAudioRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZNAudioRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0404E6F11F55677D004E96FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0404E6F31F55677D004E96FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0404E6F41F55677D004E96FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0404E6F61F55677D004E96FE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0404E6F71F55677D004E96FE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0404E6FA1F55677D004E96FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0404E6FC1F55677D004E96FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0404E6FF1F55677D004E96FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0404E7011F55677D004E96FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0404E7061F55677D004E96FE /* ZNAudioRecordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZNAudioRecordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0404E70A1F55677D004E96FE /* ZNAudioRecordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNAudioRecordTests.m; sourceTree = "<group>"; };
+		0404E70C1F55677D004E96FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0404E7111F55677D004E96FE /* ZNAudioRecordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZNAudioRecordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0404E7151F55677D004E96FE /* ZNAudioRecordUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNAudioRecordUITests.m; sourceTree = "<group>"; };
+		0404E7171F55677D004E96FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0404E7271F556BF5004E96FE /* SpectrumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectrumView.h; sourceTree = "<group>"; };
+		0404E7281F556BF5004E96FE /* SpectrumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpectrumView.m; sourceTree = "<group>"; };
+		0404E72A1F556D1A004E96FE /* ZZAudioPlayerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAudioPlayerUtil.h; sourceTree = "<group>"; };
+		0404E72B1F556D1A004E96FE /* ZZAudioPlayerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAudioPlayerUtil.m; sourceTree = "<group>"; };
+		0404E72C1F556D1A004E96FE /* ZZAudioRecorderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAudioRecorderUtil.h; sourceTree = "<group>"; };
+		0404E72D1F556D1A004E96FE /* ZZAudioRecorderUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAudioRecorderUtil.m; sourceTree = "<group>"; };
+		0404E7301F55713B004E96FE /* ZNRecordUploadNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNRecordUploadNetwork.h; sourceTree = "<group>"; };
+		0404E7311F55713B004E96FE /* ZNRecordUploadNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNRecordUploadNetwork.m; sourceTree = "<group>"; };
+		0404E7331F5571DC004E96FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0404E7351F557C6F004E96FE /* ZNAudioRecordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNAudioRecordManager.h; sourceTree = "<group>"; };
+		0404E7361F557C6F004E96FE /* ZNAudioRecordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNAudioRecordManager.m; sourceTree = "<group>"; };
+		043A23BE1F5658F600E0153F /* ZZDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZDeviceManager.h; sourceTree = "<group>"; };
+		043A23BF1F5658F600E0153F /* ZZDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZDeviceManager.m; sourceTree = "<group>"; };
+		30E38AC82A3A56B9920CAEE7 /* Pods-ZNAudioRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNAudioRecord.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZNAudioRecord/Pods-ZNAudioRecord.release.xcconfig"; sourceTree = "<group>"; };
+		398B26E3260420F4C76DBDEF /* Pods-ZNAudioRecordUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNAudioRecordUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZNAudioRecordUITests/Pods-ZNAudioRecordUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6E7E1B297B69F184C6DEE21B /* Pods-ZNAudioRecordTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNAudioRecordTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZNAudioRecordTests/Pods-ZNAudioRecordTests.release.xcconfig"; sourceTree = "<group>"; };
+		7609CC0FEDECD58D890C0BA9 /* Pods-ZNAudioRecordTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNAudioRecordTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZNAudioRecordTests/Pods-ZNAudioRecordTests.debug.xcconfig"; sourceTree = "<group>"; };
+		806C1043AECF32546742963C /* Pods-ZNAudioRecordUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNAudioRecordUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZNAudioRecordUITests/Pods-ZNAudioRecordUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8455019C18CF898DB8C52564 /* libPods-ZNAudioRecord.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZNAudioRecord.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		954B90DB6CBF3A23509A112B /* libPods-ZNAudioRecordUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZNAudioRecordUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61071F7B4FD1809580C6F21 /* libPods-ZNAudioRecordTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZNAudioRecordTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDD84E1FD23FFB8EC41C66EE /* Pods-ZNAudioRecord.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNAudioRecord.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZNAudioRecord/Pods-ZNAudioRecord.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0404E6EA1F55677D004E96FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0404E7341F5571DC004E96FE /* CoreGraphics.framework in Frameworks */,
+				99FDB53D4ED53E3D88373298 /* libPods-ZNAudioRecord.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0404E7031F55677D004E96FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9085EECD5D81EBA57C8A68CC /* libPods-ZNAudioRecordTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0404E70E1F55677D004E96FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F224B570DD8105416CC66583 /* libPods-ZNAudioRecordUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0404E6E41F55677D004E96FE = {
+			isa = PBXGroup;
+			children = (
+				0404E6EF1F55677D004E96FE /* ZNAudioRecord */,
+				0404E7091F55677D004E96FE /* ZNAudioRecordTests */,
+				0404E7141F55677D004E96FE /* ZNAudioRecordUITests */,
+				0404E6EE1F55677D004E96FE /* Products */,
+				1282A4192B15144642807A82 /* Pods */,
+				1A4738832F1AD229CD88DF02 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0404E6EE1F55677D004E96FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0404E6ED1F55677D004E96FE /* ZNAudioRecord.app */,
+				0404E7061F55677D004E96FE /* ZNAudioRecordTests.xctest */,
+				0404E7111F55677D004E96FE /* ZNAudioRecordUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0404E6EF1F55677D004E96FE /* ZNAudioRecord */ = {
+			isa = PBXGroup;
+			children = (
+				0404E7231F5567B5004E96FE /* AudioRecord */,
+				0404E6F31F55677D004E96FE /* AppDelegate.h */,
+				0404E6F41F55677D004E96FE /* AppDelegate.m */,
+				0404E6F61F55677D004E96FE /* ViewController.h */,
+				0404E6F71F55677D004E96FE /* ViewController.m */,
+				0404E6F91F55677D004E96FE /* Main.storyboard */,
+				0404E6FC1F55677D004E96FE /* Assets.xcassets */,
+				0404E6FE1F55677D004E96FE /* LaunchScreen.storyboard */,
+				0404E7011F55677D004E96FE /* Info.plist */,
+				0404E6F01F55677D004E96FE /* Supporting Files */,
+			);
+			path = ZNAudioRecord;
+			sourceTree = "<group>";
+		};
+		0404E6F01F55677D004E96FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0404E6F11F55677D004E96FE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0404E7091F55677D004E96FE /* ZNAudioRecordTests */ = {
+			isa = PBXGroup;
+			children = (
+				0404E70A1F55677D004E96FE /* ZNAudioRecordTests.m */,
+				0404E70C1F55677D004E96FE /* Info.plist */,
+			);
+			path = ZNAudioRecordTests;
+			sourceTree = "<group>";
+		};
+		0404E7141F55677D004E96FE /* ZNAudioRecordUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0404E7151F55677D004E96FE /* ZNAudioRecordUITests.m */,
+				0404E7171F55677D004E96FE /* Info.plist */,
+			);
+			path = ZNAudioRecordUITests;
+			sourceTree = "<group>";
+		};
+		0404E7231F5567B5004E96FE /* AudioRecord */ = {
+			isa = PBXGroup;
+			children = (
+				0404E7261F55680A004E96FE /* UploadUtil */,
+				0404E7251F5567EA004E96FE /* AudioUtil */,
+				0404E7241F5567D4004E96FE /* RecordView */,
+				0404E7351F557C6F004E96FE /* ZNAudioRecordManager.h */,
+				0404E7361F557C6F004E96FE /* ZNAudioRecordManager.m */,
+			);
+			path = AudioRecord;
+			sourceTree = "<group>";
+		};
+		0404E7241F5567D4004E96FE /* RecordView */ = {
+			isa = PBXGroup;
+			children = (
+				0404E7271F556BF5004E96FE /* SpectrumView.h */,
+				0404E7281F556BF5004E96FE /* SpectrumView.m */,
+			);
+			path = RecordView;
+			sourceTree = "<group>";
+		};
+		0404E7251F5567EA004E96FE /* AudioUtil */ = {
+			isa = PBXGroup;
+			children = (
+				0404E72A1F556D1A004E96FE /* ZZAudioPlayerUtil.h */,
+				0404E72B1F556D1A004E96FE /* ZZAudioPlayerUtil.m */,
+				0404E72C1F556D1A004E96FE /* ZZAudioRecorderUtil.h */,
+				0404E72D1F556D1A004E96FE /* ZZAudioRecorderUtil.m */,
+				043A23BE1F5658F600E0153F /* ZZDeviceManager.h */,
+				043A23BF1F5658F600E0153F /* ZZDeviceManager.m */,
+			);
+			path = AudioUtil;
+			sourceTree = "<group>";
+		};
+		0404E7261F55680A004E96FE /* UploadUtil */ = {
+			isa = PBXGroup;
+			children = (
+				0404E7301F55713B004E96FE /* ZNRecordUploadNetwork.h */,
+				0404E7311F55713B004E96FE /* ZNRecordUploadNetwork.m */,
+			);
+			path = UploadUtil;
+			sourceTree = "<group>";
+		};
+		1282A4192B15144642807A82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDD84E1FD23FFB8EC41C66EE /* Pods-ZNAudioRecord.debug.xcconfig */,
+				30E38AC82A3A56B9920CAEE7 /* Pods-ZNAudioRecord.release.xcconfig */,
+				7609CC0FEDECD58D890C0BA9 /* Pods-ZNAudioRecordTests.debug.xcconfig */,
+				6E7E1B297B69F184C6DEE21B /* Pods-ZNAudioRecordTests.release.xcconfig */,
+				806C1043AECF32546742963C /* Pods-ZNAudioRecordUITests.debug.xcconfig */,
+				398B26E3260420F4C76DBDEF /* Pods-ZNAudioRecordUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1A4738832F1AD229CD88DF02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0404E7331F5571DC004E96FE /* CoreGraphics.framework */,
+				8455019C18CF898DB8C52564 /* libPods-ZNAudioRecord.a */,
+				B61071F7B4FD1809580C6F21 /* libPods-ZNAudioRecordTests.a */,
+				954B90DB6CBF3A23509A112B /* libPods-ZNAudioRecordUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0404E6EC1F55677D004E96FE /* ZNAudioRecord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0404E71A1F55677D004E96FE /* Build configuration list for PBXNativeTarget "ZNAudioRecord" */;
+			buildPhases = (
+				130EA894A2344FF3FD8BC2EC /* [CP] Check Pods Manifest.lock */,
+				0404E6E91F55677D004E96FE /* Sources */,
+				0404E6EA1F55677D004E96FE /* Frameworks */,
+				0404E6EB1F55677D004E96FE /* Resources */,
+				7F4F25EF02712056BF5484C1 /* [CP] Embed Pods Frameworks */,
+				8F4313B84D94EDD35A9A1351 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZNAudioRecord;
+			productName = ZNAudioRecord;
+			productReference = 0404E6ED1F55677D004E96FE /* ZNAudioRecord.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0404E7051F55677D004E96FE /* ZNAudioRecordTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0404E71D1F55677D004E96FE /* Build configuration list for PBXNativeTarget "ZNAudioRecordTests" */;
+			buildPhases = (
+				47136E0AB3D8C6D943D0D2CF /* [CP] Check Pods Manifest.lock */,
+				0404E7021F55677D004E96FE /* Sources */,
+				0404E7031F55677D004E96FE /* Frameworks */,
+				0404E7041F55677D004E96FE /* Resources */,
+				916DCF313C0051B051B6321B /* [CP] Embed Pods Frameworks */,
+				979AFEF37F23615D47A13425 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0404E7081F55677D004E96FE /* PBXTargetDependency */,
+			);
+			name = ZNAudioRecordTests;
+			productName = ZNAudioRecordTests;
+			productReference = 0404E7061F55677D004E96FE /* ZNAudioRecordTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0404E7101F55677D004E96FE /* ZNAudioRecordUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0404E7201F55677D004E96FE /* Build configuration list for PBXNativeTarget "ZNAudioRecordUITests" */;
+			buildPhases = (
+				826175BB55BB9E852E510487 /* [CP] Check Pods Manifest.lock */,
+				0404E70D1F55677D004E96FE /* Sources */,
+				0404E70E1F55677D004E96FE /* Frameworks */,
+				0404E70F1F55677D004E96FE /* Resources */,
+				1D15C81E1F6A2FA3EE420A3F /* [CP] Embed Pods Frameworks */,
+				B42318E4DDC1A87BC2AE99EB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0404E7131F55677D004E96FE /* PBXTargetDependency */,
+			);
+			name = ZNAudioRecordUITests;
+			productName = ZNAudioRecordUITests;
+			productReference = 0404E7111F55677D004E96FE /* ZNAudioRecordUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0404E6E51F55677D004E96FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Netposa;
+				TargetAttributes = {
+					0404E6EC1F55677D004E96FE = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = US9RD43W86;
+						ProvisioningStyle = Automatic;
+					};
+					0404E7051F55677D004E96FE = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = US9RD43W86;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0404E6EC1F55677D004E96FE;
+					};
+					0404E7101F55677D004E96FE = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = US9RD43W86;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0404E6EC1F55677D004E96FE;
+					};
+				};
+			};
+			buildConfigurationList = 0404E6E81F55677D004E96FE /* Build configuration list for PBXProject "ZNAudioRecord" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0404E6E41F55677D004E96FE;
+			productRefGroup = 0404E6EE1F55677D004E96FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0404E6EC1F55677D004E96FE /* ZNAudioRecord */,
+				0404E7051F55677D004E96FE /* ZNAudioRecordTests */,
+				0404E7101F55677D004E96FE /* ZNAudioRecordUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0404E6EB1F55677D004E96FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0404E7001F55677D004E96FE /* LaunchScreen.storyboard in Resources */,
+				0404E6FD1F55677D004E96FE /* Assets.xcassets in Resources */,
+				0404E6FB1F55677D004E96FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0404E7041F55677D004E96FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0404E70F1F55677D004E96FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		130EA894A2344FF3FD8BC2EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1D15C81E1F6A2FA3EE420A3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZNAudioRecordUITests/Pods-ZNAudioRecordUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47136E0AB3D8C6D943D0D2CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7F4F25EF02712056BF5484C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZNAudioRecord/Pods-ZNAudioRecord-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		826175BB55BB9E852E510487 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F4313B84D94EDD35A9A1351 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZNAudioRecord/Pods-ZNAudioRecord-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		916DCF313C0051B051B6321B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZNAudioRecordTests/Pods-ZNAudioRecordTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		979AFEF37F23615D47A13425 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZNAudioRecordTests/Pods-ZNAudioRecordTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B42318E4DDC1A87BC2AE99EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZNAudioRecordUITests/Pods-ZNAudioRecordUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0404E6E91F55677D004E96FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0404E72E1F556D1A004E96FE /* ZZAudioPlayerUtil.m in Sources */,
+				0404E6F81F55677D004E96FE /* ViewController.m in Sources */,
+				0404E72F1F556D1A004E96FE /* ZZAudioRecorderUtil.m in Sources */,
+				0404E6F51F55677D004E96FE /* AppDelegate.m in Sources */,
+				0404E6F21F55677D004E96FE /* main.m in Sources */,
+				0404E7371F557C6F004E96FE /* ZNAudioRecordManager.m in Sources */,
+				0404E7291F556BF5004E96FE /* SpectrumView.m in Sources */,
+				0404E7321F55713B004E96FE /* ZNRecordUploadNetwork.m in Sources */,
+				043A23C01F5658F600E0153F /* ZZDeviceManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0404E7021F55677D004E96FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0404E70B1F55677D004E96FE /* ZNAudioRecordTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0404E70D1F55677D004E96FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0404E7161F55677D004E96FE /* ZNAudioRecordUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0404E7081F55677D004E96FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0404E6EC1F55677D004E96FE /* ZNAudioRecord */;
+			targetProxy = 0404E7071F55677D004E96FE /* PBXContainerItemProxy */;
+		};
+		0404E7131F55677D004E96FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0404E6EC1F55677D004E96FE /* ZNAudioRecord */;
+			targetProxy = 0404E7121F55677D004E96FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0404E6F91F55677D004E96FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0404E6FA1F55677D004E96FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0404E6FE1F55677D004E96FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0404E6FF1F55677D004E96FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0404E7181F55677D004E96FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0404E7191F55677D004E96FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0404E71B1F55677D004E96FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDD84E1FD23FFB8EC41C66EE /* Pods-ZNAudioRecord.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = US9RD43W86;
+				INFOPLIST_FILE = ZNAudioRecord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Netposa.ZNAudioRecord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0404E71C1F55677D004E96FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30E38AC82A3A56B9920CAEE7 /* Pods-ZNAudioRecord.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = US9RD43W86;
+				INFOPLIST_FILE = ZNAudioRecord/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Netposa.ZNAudioRecord;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		0404E71E1F55677D004E96FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7609CC0FEDECD58D890C0BA9 /* Pods-ZNAudioRecordTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = US9RD43W86;
+				INFOPLIST_FILE = ZNAudioRecordTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Netposa.ZNAudioRecordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZNAudioRecord.app/ZNAudioRecord";
+			};
+			name = Debug;
+		};
+		0404E71F1F55677D004E96FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E7E1B297B69F184C6DEE21B /* Pods-ZNAudioRecordTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = US9RD43W86;
+				INFOPLIST_FILE = ZNAudioRecordTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Netposa.ZNAudioRecordTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZNAudioRecord.app/ZNAudioRecord";
+			};
+			name = Release;
+		};
+		0404E7211F55677D004E96FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 806C1043AECF32546742963C /* Pods-ZNAudioRecordUITests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = US9RD43W86;
+				INFOPLIST_FILE = ZNAudioRecordUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Netposa.ZNAudioRecordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZNAudioRecord;
+			};
+			name = Debug;
+		};
+		0404E7221F55677D004E96FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 398B26E3260420F4C76DBDEF /* Pods-ZNAudioRecordUITests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = US9RD43W86;
+				INFOPLIST_FILE = ZNAudioRecordUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Netposa.ZNAudioRecordUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZNAudioRecord;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0404E6E81F55677D004E96FE /* Build configuration list for PBXProject "ZNAudioRecord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0404E7181F55677D004E96FE /* Debug */,
+				0404E7191F55677D004E96FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0404E71A1F55677D004E96FE /* Build configuration list for PBXNativeTarget "ZNAudioRecord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0404E71B1F55677D004E96FE /* Debug */,
+				0404E71C1F55677D004E96FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0404E71D1F55677D004E96FE /* Build configuration list for PBXNativeTarget "ZNAudioRecordTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0404E71E1F55677D004E96FE /* Debug */,
+				0404E71F1F55677D004E96FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0404E7201F55677D004E96FE /* Build configuration list for PBXNativeTarget "ZNAudioRecordUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0404E7211F55677D004E96FE /* Debug */,
+				0404E7221F55677D004E96FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0404E6E51F55677D004E96FE /* Project object */;
+}
