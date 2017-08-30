@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    Record_Status_Prepare,
+    Record_Status_Pause,
+    Record_Status_finish,
+} Record_Status;
+
 @protocol   SpectrumViewDelegate<NSObject>
 
 @optional
@@ -43,6 +49,9 @@
 @property (nonatomic) UILabel *timeLabel;
 
 @property (nonatomic) NSString *text;
+
+//当前录音机状态
+@property (nonatomic, assign) Record_Status recordStatus;
 
 - (void)start;
 - (void)stop;

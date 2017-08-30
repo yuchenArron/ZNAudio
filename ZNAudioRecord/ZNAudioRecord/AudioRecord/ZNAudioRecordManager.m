@@ -11,8 +11,9 @@
 #import "ZZAudioRecorderUtil.h"
 #import "ZZDeviceManager.h"
 #import "ZNRecordUploadNetwork.h"
+#import "ZNAudioRecordTools.h"
 
-#define PerRecordFileLimitCount  (2 * 60)
+#define PerRecordFileLimitCount  (2 * 30)
 
 @interface ZNAudioRecordManager()<SpectrumViewDelegate>
 
@@ -26,6 +27,21 @@
 
 @implementation ZNAudioRecordManager
 
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        [self setContentInit];
+    }
+    return self;
+}
+
+- (void)setContentInit{
+    self.userName = @"YUCHEN";
+    
+    //获取总计数
+    self.totalTimeCount = [ZNAudioRecordTools getCurrentTotalNumberUser:self.userName];
+}
+
 - (NSTimer *)totalTimer{
     if (!_totalTimer) {
         _totalTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(recordCountTimer:) userInfo:nil repeats:YES];
@@ -36,30 +52,23 @@
 - (SpectrumView *)recordViewWithFrame:(CGRect)frame{
     self.recordView = [[SpectrumView alloc]initWithFrame:frame];
     self.recordView.delegate  = self;
-    
+    if (self.totalTimeCount > 0) {
+        [self.recordView setRecordStatus:Record_Status_Pause];
+        self.recordView.text = [ZNAudioRecordTools timeStringWithTimerCount:self.totalTimeCount];
+    }
     return self.recordView;
 }
 
 #pragma mark - timer
 - (void)recordCountTimer:(NSTimer*)timer{
     
-    if (self.totalTimeCount % PerRecordFileLimitCount == 0) {
-        
-        //上传上一段录音文件
-        [self uploadLastestPerRecord];
-        
-        //停止录音
-        [[ZZDeviceManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
-            
-        }];
-        //开始录音
-        NSString *fileName = [self fileNameWithIndex:self.totalTimeCount / PerRecordFileLimitCount];
-        self.previrRecordPath = [[ZZDeviceManager shareInstance] startRecordingWithFileName:fileName completion:^(NSError *error) {
-            
-        }];
-    }
+    [self dealRecord];
     
     self.totalTimeCount ++;
+    //展示录音时长
+    self.recordView.text = [ZNAudioRecordTools timeStringWithTimerCount:self.totalTimeCount];
+    //保存当前时长
+    [ZNAudioRecordTools setCurrentTotalNumber:self.totalTimeCount user:self.userName];
 }
 
 #pragma mark - SpectrumViewDelegate
@@ -70,6 +79,7 @@
 
 - (void)viewDelegatePauseRecord{
     [self stopCount];
+    [[ZZDeviceManager shareInstance]pauseCurrentRecording];
 }
 
 - (void)viewDelegateCancelRecord{
@@ -78,6 +88,7 @@
 
 - (void)viewDelegateResumeRecord{
     [self startCount];
+    [[ZZDeviceManager shareInstance] resumeCurrentRecording] ;
 }
 
 - (void)viewDelegateFinishRecord{
@@ -93,17 +104,29 @@
     
     __weak typeof(self) weakSelf = self;
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:FinishRecordPromptTitle message:FinishRecordPromptMessage preferredStyle:UIAlertControllerStyleAlert];
+    //修改title
+    NSString *titleStr = FinishRecordPromptTitle;
+    NSMutableAttributedString *alertControllerStr = [[NSMutableAttributedString alloc] initWithString:titleStr];
+    [alertControllerStr addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, titleStr.length)];
+    [alertControllerStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0, titleStr.length)];
+    [alertController setValue:alertControllerStr forKey:@"attributedTitle"];
     
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:FinishRecordPromptCancel style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf startCount];
     }];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [cancelAction setValue:[UIColor blackColor] forKey:@"titleTextColor"];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:FinishRecordPromptOK style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         //结束录制后的操作
         weakSelf.totalTimeCount = 0;
+        [ZNAudioRecordTools clearRecordingMarkUserName:weakSelf.userName];
+        [weakSelf.recordView setRecordStatus:Record_Status_finish];
+        //上传上一段录音文件
+        [self uploadLastestPerRecord];
         
     }];
+    [okAction setValue:[UIColor redColor] forKey:@"titleTextColor"];
     
     [alertController addAction:cancelAction];
     [alertController addAction:okAction];
@@ -145,12 +168,13 @@
 
 #pragma mark - private methods
 - (NSString*)fileNameWithIndex:(NSInteger)index{
-    return [NSString stringWithFormat:@"%@_%ld",self.userName,index];
+    return [NSString stringWithFormat:@"%@_%ld",self.userName,(long)index];
 }
 
 - (void)stopCount{
     [self.totalTimer invalidate];
     self.totalTimer = nil;
+    
 }
 
 - (void)startCount{
@@ -168,5 +192,37 @@
         }];
     }
 }
+
+#pragma mark - //录音 逻辑
+
+- (void)dealRecord{
+    if (self.totalTimeCount % PerRecordFileLimitCount == 0) {
+        
+        if (self.totalTimeCount != 0 ){
+            //上传上一段录音文件
+            [self uploadLastestPerRecord];
+            
+            __weak typeof(self) weakSelf = self;
+            //停止录音
+            [[ZZDeviceManager shareInstance] stopRecordingWithCompletion:^(NSString *recordPath, NSInteger aDuration, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //开始录音
+                    NSString *fileName = [weakSelf fileNameWithIndex:weakSelf.totalTimeCount / PerRecordFileLimitCount];
+                    weakSelf.previrRecordPath = [[ZZDeviceManager shareInstance] startRecordingWithFileName:fileName completion:^(NSError *error) {
+                        
+                    }];
+                });
+            }];
+        }else{
+            //开始录音
+            NSString *fileName = [self fileNameWithIndex:self.totalTimeCount / PerRecordFileLimitCount];
+            self.previrRecordPath = [[ZZDeviceManager shareInstance] startRecordingWithFileName:fileName completion:^(NSError *error) {
+                
+            }];
+        }
+    }
+}
+
+
 
 @end

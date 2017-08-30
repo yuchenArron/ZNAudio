@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "SpectrumView.h"
+#import "ZNAudioRecordMacro.h"
 
 @interface ZNAudioRecordManager : NSObject
 

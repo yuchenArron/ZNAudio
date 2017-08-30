@@ -44,6 +44,11 @@
 // 取消录音
 -(void)cancelCurrentRecording;
 
+//暂停录音
+-(void)pauseCurrentRecording;
+
+//恢复录音
+-(void)resumeCurrentRecording;
 
 // 当前是否正在录音
 -(BOOL)isRecording;

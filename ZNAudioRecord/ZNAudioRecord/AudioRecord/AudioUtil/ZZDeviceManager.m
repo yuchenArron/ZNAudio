@@ -175,16 +175,18 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
         });
         return ;
     }
-    ZZAudioRecorderUtil * ru = [ZZAudioRecorderUtil shareInstance];
-    [ru stopRecorderWithCompletion:^(NSString *recoredPath) {
-        if (completion) {
-            if (recoredPath) {
-                completion(recoredPath,(int)[self->_recorderEndDate timeIntervalSinceDate:self->_recorderStartDate],nil);
-            }
-            [weakSelf setupAudioSessionCategory:ZZ_DEFAULT isActive:NO];
-        }
-
-    }];
+   dispatch_async(dispatch_get_main_queue(), ^{
+       ZZAudioRecorderUtil * ru = [ZZAudioRecorderUtil shareInstance];
+       [ru stopRecorderWithCompletion:^(NSString *recoredPath) {
+           if (completion) {
+               if (recoredPath) {
+                   completion(recoredPath,(int)[self->_recorderEndDate timeIntervalSinceDate:self->_recorderStartDate],nil);
+               }
+               [weakSelf setupAudioSessionCategory:ZZ_DEFAULT isActive:NO];
+           }
+           
+       }];
+   });
 }
 // 取消录音
 -(void)cancelCurrentRecording{
@@ -192,6 +194,15 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
     [ru cancelCurrentRecording];
 }
 
+-(void)pauseCurrentRecording{
+    ZZAudioRecorderUtil * ru = [ZZAudioRecorderUtil shareInstance];
+    [ru pauseCurrentRecording];
+}
+
+-(void)resumeCurrentRecording{
+    ZZAudioRecorderUtil * ru = [ZZAudioRecorderUtil shareInstance];
+    [ru resumeCurrentRecording];
+}
 
 // 当前是否正在录音
 -(BOOL)isRecording{
@@ -274,85 +285,5 @@ typedef NS_ENUM(NSUInteger, ZZAudioSession) {
 
 }
 
-//#pragma mark -- ProximitySensor
-//- (void)registerNotifications
-//{
-//    [self unregisterNotifications];
-//    if (_isSupportProximitySensor) {
-//        static NSString *notif = @"UIDeviceProximityStateDidChangeNotification";
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(sensorStateChanged:)
-//                                                     name:notif
-//                                                   object:nil];
-//    }
-//}
-//
-//- (void)unregisterNotifications {
-//    if (_isSupportProximitySensor) {
-//        static NSString *notif = @"UIDeviceProximityStateDidChangeNotification";
-//        [[NSNotificationCenter defaultCenter] removeObserver:self
-//                                                        name:notif
-//                                                      object:nil];
-//    }
-//}
-//
-//- (void)_setupProximitySensor
-//{
-//    
-//    UIDevice *device = [UIDevice currentDevice];
-//    [device setProximityMonitoringEnabled:YES];
-//    _isSupportProximitySensor = device.proximityMonitoringEnabled;
-//    if (_isSupportProximitySensor) {
-//        [device setProximityMonitoringEnabled:NO];
-//    } else {
-//        
-//    }
-//}
-//- (BOOL)isProximitySensorEnabled {
-//    BOOL ret = NO;
-//    ret = self.isSupportProximitySensor && [UIDevice currentDevice].proximityMonitoringEnabled;
-//    return ret;
-//}
-//
-//- (BOOL)enableProximitySensor {
-//    BOOL ret = NO;
-//    if (_isSupportProximitySensor) {
-//        [[UIDevice currentDevice] setProximityMonitoringEnabled:YES];
-//        ret = YES;
-//    }
-//    
-//    return ret;
-//}
-//
-//- (BOOL)disableProximitySensor {
-//    BOOL ret = NO;
-//    if (_isSupportProximitySensor) {
-//        [[UIDevice currentDevice] setProximityMonitoringEnabled:NO];
-//        _isCloseToUser = NO;
-//        ret = YES;
-//    }
-//    
-//    return ret;
-//}
-//
-//- (void)sensorStateChanged:(NSNotification *)notification {
-//    BOOL ret = NO;
-//    if ([[UIDevice currentDevice] proximityState] == YES) {
-//        ret = YES;
-//    }
-//    _isCloseToUser = ret;
-////    if([self.delegate respondsToSelector:@selector(proximitySensorChanged:)]){
-////        [self.delegate proximitySensorChanged:_isCloseToUser];
-////    }
-//}
-//
-//#pragma mark - getter
-//- (BOOL)isCloseToUser {
-//    return _isCloseToUser;
-//}
-//
-//- (BOOL)isSupportProximitySensor {
-//    return _isSupportProximitySensor;
-//}
 
 @end

@@ -61,6 +61,7 @@
                              stringByAppendingPathExtension:@"wav"];
     NSURL *wavUrl = [[NSURL alloc] initFileURLWithPath:wavFilePath];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+   
     [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
     _audioRecorder = [[AVAudioRecorder alloc] initWithURL:wavUrl
                                             settings:self.recoredSettings
@@ -75,8 +76,9 @@
         }
         return wavFilePath;
     }
-    BOOL success = [_audioRecorder record];
-
+    
+    [_audioRecorder record];
+    
     if (completion) {
         completion(nil);
     }
@@ -86,6 +88,7 @@
 - (void)stopRecorderWithCompletion:(void(^)(NSString *recoredPath))completion{
     self.recoredFinish = completion;
     [self.audioRecorder stop];
+    
 }
 // 取消录音
 - (void)cancelCurrentRecording
@@ -130,8 +133,6 @@
     NSLog(@"%@",error);
 }
 
-
-
 - (BOOL)checkMicrophoneAvailability{
     __block BOOL ret = NO;
     AVAudioSession *session = [AVAudioSession sharedInstance];
@@ -142,7 +143,6 @@
     } else {
         ret = YES;
     }
-    
     return ret;
 }
 

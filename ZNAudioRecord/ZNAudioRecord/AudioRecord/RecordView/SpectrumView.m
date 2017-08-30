@@ -22,6 +22,8 @@
 @property (nonatomic, strong) UIButton *recordButton;
 @property (nonatomic, strong) UIButton *finishButton;
 
+@property (nonatomic, assign) BOOL isRecordingPause;
+
 @end
 
 @implementation SpectrumView
@@ -73,6 +75,7 @@
     [self.timeLabel setTextColor:[UIColor grayColor]];
     [self.timeLabel setTextAlignment:NSTextAlignmentCenter];
     [self addSubview:self.timeLabel];
+    self.timeLabel.hidden = YES;
     
     self.levelArray = [[NSMutableArray alloc]init];
     for(int i = 0 ; i < self.numberOfItems/2 ; i++){
@@ -93,6 +96,8 @@
     self.recordButton.layer.cornerRadius = ButtonFrameWidthAndHeight / 2;
     [self addSubview:self.recordButton];
     self.recordButton.backgroundColor  = [UIColor redColor];
+    
+    [self setRecordStatus:Record_Status_Prepare];
 }
 
 -(void)setItemLevelCallback:(void (^)())itemLevelCallback
@@ -138,6 +143,38 @@
     self.timeLabel.text = text;
 }
 
+- (void)setRecordStatus:(Record_Status)recordStatus{
+    switch (recordStatus) {
+        case Record_Status_Prepare:
+            [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+            break;
+        case Record_Status_Pause:
+            [self setPauseStatusUI];
+            break;
+        case Record_Status_finish:
+            [self setRecordFinishStatusUI];
+            [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)setPauseStatusUI{
+    [self showButtonsAnimation];
+    self.recordButton.selected = NO;
+}
+
+- (void)setRecordFinishStatusUI{
+    __weak typeof(self) weakSelf = self;
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect frame = weakSelf.frame;
+        frame.size.height = 0;
+        weakSelf.frame = frame;
+    } completion:^(BOOL finished) {
+        [weakSelf removeFromSuperview];
+    }];
+}
 
 - (void)updateItems
 {
@@ -214,11 +251,20 @@
         if ([self.delegate respondsToSelector:@selector(viewDelegatePauseRecord)]) {
             [self.delegate viewDelegatePauseRecord];
         }
+        self.isRecordingPause = YES;
     }else{
-    //开始
-        [self showButtonsAnimation];
-        if ([self.delegate respondsToSelector:@selector(viewDelegateStartRecord)]) {
-            [self.delegate viewDelegateStartRecord];
+        
+        if(self.isRecordingPause){
+            if ([self.delegate respondsToSelector:@selector(viewDelegateResumeRecord)]) {
+                [self.delegate viewDelegateResumeRecord];
+            }
+            self.isRecordingPause = NO;
+        }else{
+            //开始
+            [self showButtonsAnimation];
+            if ([self.delegate respondsToSelector:@selector(viewDelegateStartRecord)]) {
+                [self.delegate viewDelegateStartRecord];
+            }
         }
     }
     button.selected = !button.selected;
@@ -231,13 +277,12 @@
     CGRect frame = self.recordButton.frame;
     
     __weak typeof(self) weakSelf = self;
-    [UIView animateWithDuration:1 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         weakSelf.recordButton.frame = CGRectMake(pointX - ButtonFrameWidthAndHeight / 2, frame.origin.y, frame.size.width, frame.size.height);
         weakSelf.finishButton.frame = CGRectMake(2 * pointX - ButtonFrameWidthAndHeight / 2, frame.origin.y, frame.size.width, frame.size.height);
     } completion:^(BOOL finished) {
-        
+        self.timeLabel.hidden = NO;
     }];
-    
 }
 
 
