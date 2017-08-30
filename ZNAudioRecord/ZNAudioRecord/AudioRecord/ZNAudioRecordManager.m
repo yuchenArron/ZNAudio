@@ -215,8 +215,11 @@
     if (self.totalTimeCount % PerRecordFileLimitCount == 0) {
         
         if (self.totalTimeCount != 0 ){
-             NSString *fileName = [self fileNameWithIndex:(self.totalTimeCount - 1) / PerRecordFileLimitCount - 1];
-             [ZNAudioRecordTools pieceFileA:fileName withFileB:TheRecordPartName];
+            if (self.isRestartApp){
+                NSString *fileName = [self fileNameWithIndex:(self.totalTimeCount - 1) / PerRecordFileLimitCount - 1];
+                [ZNAudioRecordTools pieceFileA:fileName withFileB:TheRecordPartName];
+                self.isRestartApp = NO;
+            }
             //上传上一段录音文件
             [self uploadLastestPerRecord];
             
