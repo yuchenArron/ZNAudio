@@ -8,7 +8,7 @@
 
 #import "SpectrumView.h"
 
-#define ButtonFrameWidthAndHeight      34
+#define ButtonFrameWidthAndHeight      44
 
 @interface SpectrumView ()
 

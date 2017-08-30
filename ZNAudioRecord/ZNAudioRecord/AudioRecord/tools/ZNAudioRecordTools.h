@@ -19,4 +19,10 @@
 //结束录音 清除标记信息
 + (void)clearRecordingMarkUserName:(NSString*)userName;
 
+//拼接录音文件
++ (BOOL)pieceFileA:(NSString *)fileA
+         withFileB:(NSString *)fileB;
+//获取录音文件路径
++ (NSString*)filePathWithFileName:(NSString*)fileName;
+
 @end

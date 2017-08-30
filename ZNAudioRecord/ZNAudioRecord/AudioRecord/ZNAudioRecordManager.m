@@ -13,7 +13,9 @@
 #import "ZNRecordUploadNetwork.h"
 #import "ZNAudioRecordTools.h"
 
-#define PerRecordFileLimitCount  (2 * 30)
+#define PerRecordFileLimitCount  (2 * 60)
+#define TheRecordPartName @"theRecordPart"
+
 
 @interface ZNAudioRecordManager()<SpectrumViewDelegate>
 
@@ -22,6 +24,9 @@
 @property (nonatomic, copy) NSString *previrRecordPath;
 
 @property (nonatomic, strong) SpectrumView *recordView;
+
+//是否重启重新录制
+@property (nonatomic, assign) BOOL isRestartApp;
 
 @end
 
@@ -75,6 +80,17 @@
 
 - (void)viewDelegateStartRecord{
     [self startCount];
+    
+    if (self.totalTimeCount > 0 && self.totalTimeCount % PerRecordFileLimitCount != 0){
+        NSString *fileName = [self fileNameWithIndex:self.totalTimeCount / PerRecordFileLimitCount  - 1];
+        [ZNAudioRecordTools pieceFileA:fileName withFileB:TheRecordPartName];
+        
+        [[ZZDeviceManager shareInstance] startRecordingWithFileName:TheRecordPartName completion:^(NSError *error) {
+            
+        }];
+        self.isRestartApp = YES;
+    }
+    
 }
 
 - (void)viewDelegatePauseRecord{
@@ -199,6 +215,8 @@
     if (self.totalTimeCount % PerRecordFileLimitCount == 0) {
         
         if (self.totalTimeCount != 0 ){
+             NSString *fileName = [self fileNameWithIndex:(self.totalTimeCount - 1) / PerRecordFileLimitCount - 1];
+             [ZNAudioRecordTools pieceFileA:fileName withFileB:TheRecordPartName];
             //上传上一段录音文件
             [self uploadLastestPerRecord];
             

@@ -29,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UIView *recordView = [self.recordManager recordViewWithFrame:CGRectMake(0, 44, self.view.frame.size.width, 60)];
+    UIView *recordView = [self.recordManager recordViewWithFrame:CGRectMake(0, 44, self.view.frame.size.width, 80)];
     [self.view addSubview: recordView];
     
     recordView.backgroundColor = [UIColor greenColor];
