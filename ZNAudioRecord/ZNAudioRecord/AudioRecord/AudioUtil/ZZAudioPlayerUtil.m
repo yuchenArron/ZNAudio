@@ -10,6 +10,8 @@
 
 @interface ZZAudioPlayerUtil ()<AVAudioPlayerDelegate>
 @property (nonatomic, copy) void(^playFinish)(NSError * error);
+@property (nonatomic, strong) AVPlayer *player;
+
 @end
 
 @implementation ZZAudioPlayerUtil
