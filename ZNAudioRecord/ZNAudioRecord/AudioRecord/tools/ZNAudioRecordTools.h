@@ -25,4 +25,6 @@
 //获取录音文件路径
 + (NSString*)filePathWithFileName:(NSString*)fileName;
 
++ (NSArray*)getAllFilesWithName;
+
 @end

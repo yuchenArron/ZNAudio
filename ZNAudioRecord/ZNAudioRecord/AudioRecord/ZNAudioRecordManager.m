@@ -12,8 +12,9 @@
 #import "ZZDeviceManager.h"
 #import "ZNRecordUploadNetwork.h"
 #import "ZNAudioRecordTools.h"
+#import "ZNAudioPlayerUtil.h"
 
-#define PerRecordFileLimitCount  (2 * 60)
+#define PerRecordFileLimitCount  (2 * 10)
 #define TheRecordPartName @"theRecordPart"
 
 
@@ -45,6 +46,14 @@
     
     //获取总计数
     self.totalTimeCount = [ZNAudioRecordTools getCurrentTotalNumberUser:self.userName];
+    
+    //测试播放
+    NSArray *filePathArr = [ZNAudioRecordTools getAllFilesWithName];
+    
+    [[ZZDeviceManager shareInstance] playAudioWithPath:filePathArr.firstObject completion:^(NSError *error) {
+        
+    }];
+//    [ZNAudioPlayerUtil playAudios:filePathArr];
 }
 
 - (NSTimer *)totalTimer{

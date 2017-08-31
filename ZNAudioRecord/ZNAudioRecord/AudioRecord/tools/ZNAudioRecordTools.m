@@ -25,7 +25,7 @@
     min = (count - hour * 60) / 60;
     second = count % 60;
     
-    if (hour > 0) {
+    if (1) {
         return [NSString stringWithFormat:@"%@:%@:%@",[ZNAudioRecordTools stringWithNumber:hour],[ZNAudioRecordTools stringWithNumber:min],[ZNAudioRecordTools stringWithNumber:second]];
     }else{
         return [NSString stringWithFormat:@"%@:%@",[ZNAudioRecordTools stringWithNumber:min],[ZNAudioRecordTools stringWithNumber:second]];
@@ -48,6 +48,20 @@
     NSString *recordPath = NSHomeDirectory();
     recordPath = [NSString stringWithFormat:@"%@/Library/appdata/%@.wav",recordPath,fileName];
     return recordPath;
+}
+
++ (NSArray *)getAllFilesWithName{
+    NSString *recordPath = NSHomeDirectory();
+    recordPath = [NSString stringWithFormat:@"%@/Library/appdata/",recordPath];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *fileArr = [fileManager contentsOfDirectoryAtPath:recordPath error:nil];
+   
+    NSMutableArray *filePathArr = [NSMutableArray new];
+    for (NSString *fileName in fileArr) {
+        NSString *filePath = [recordPath stringByAppendingPathComponent:fileName];
+        [filePathArr addObject:filePath];
+    }
+    return filePathArr;
 }
 
 + (BOOL)pieceFileA:(NSString *)filePathA

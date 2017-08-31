@@ -70,6 +70,7 @@
 - (void)playItems:(NSArray*)items{
     if (!self.queuePlayer) {
         self.queuePlayer = [AVQueuePlayer queuePlayerWithItems:items];
+        self.queuePlayer.actionAtItemEnd = AVPlayerActionAtItemEndAdvance;
     }
     [self.queuePlayer play];
 }
