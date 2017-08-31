@@ -53,11 +53,15 @@
 + (BOOL)pieceFileA:(NSString *)filePathA
          withFileB:(NSString *)filePathB
 {
+    
+    NSString *pathA = [ZNAudioRecordTools filePathWithFileName:filePathA];
+    NSString *pathB = [ZNAudioRecordTools filePathWithFileName:filePathB];
+    
     // 更新的方式读取文件A
-    NSFileHandle *handleA = [NSFileHandle fileHandleForUpdatingAtPath:filePathA];
+    NSFileHandle *handleA = [NSFileHandle fileHandleForUpdatingAtPath:pathA];
     [handleA seekToEndOfFile];
     
-    NSDictionary *fileBDic = [[NSFileManager defaultManager] attributesOfItemAtPath:filePathB error:nil];
+    NSDictionary *fileBDic = [[NSFileManager defaultManager] attributesOfItemAtPath:pathB error:nil];
     long long fileSizeB    = fileBDic.fileSize;
     
     // 大于xM分片拼接xM
@@ -74,7 +78,7 @@
             sizes += 1;
         }
         
-        NSFileHandle *handleB = [NSFileHandle fileHandleForReadingAtPath:filePathB];
+        NSFileHandle *handleB = [NSFileHandle fileHandleForReadingAtPath:pathB];
         for (int i =0; i < sizes; i++) {
             
             [handleB seekToFileOffset:i * KFILESIZE];
@@ -87,14 +91,14 @@
         // 大于xM分片读xM(最后一片可能小于xM)
     }else{
         
-        [handleA writeData:[NSData dataWithContentsOfFile:filePathB]];
+        [handleA writeData:[NSData dataWithContentsOfFile:pathB]];
         
     }
     
     [handleA synchronizeFile];
     
     // 将B文件删除
-    [[NSFileManager defaultManager] removeItemAtPath:filePathB error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:pathB error:nil];
     
     return YES;
 }

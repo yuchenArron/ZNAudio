@@ -82,7 +82,7 @@
     [self startCount];
     
     if (self.totalTimeCount > 0 && self.totalTimeCount % PerRecordFileLimitCount != 0){
-        NSString *fileName = [self fileNameWithIndex:self.totalTimeCount / PerRecordFileLimitCount  - 1];
+        NSString *fileName = [self fileNameWithIndex:(self.totalTimeCount) / PerRecordFileLimitCount];
         [ZNAudioRecordTools pieceFileA:fileName withFileB:TheRecordPartName];
         
         [[ZZDeviceManager shareInstance] startRecordingWithFileName:TheRecordPartName completion:^(NSError *error) {
@@ -216,7 +216,7 @@
         
         if (self.totalTimeCount != 0 ){
             if (self.isRestartApp){
-                NSString *fileName = [self fileNameWithIndex:(self.totalTimeCount - 1) / PerRecordFileLimitCount - 1];
+                NSString *fileName = [self fileNameWithIndex:(self.totalTimeCount - 1) / PerRecordFileLimitCount];
                 [ZNAudioRecordTools pieceFileA:fileName withFileB:TheRecordPartName];
                 self.isRestartApp = NO;
             }

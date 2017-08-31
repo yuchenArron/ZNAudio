@@ -12,6 +12,7 @@
 @interface ZNAudioPlayerUtil()
 
 @property (nonatomic, strong) AVQueuePlayer *queuePlayer;
+@property (nonatomic, assign) CGFloat totalDuration;
 
 @end
 
@@ -37,10 +38,15 @@
 
 + (NSArray<AVPlayerItem*>*)playerItemsWithStr:(NSArray<NSString*>*)audioArr{
     NSMutableArray *itemArr = [NSMutableArray new];
+    
+    
     for (NSString *urlStr in audioArr) {
         NSURL *url = [NSURL URLWithString:urlStr];
         AVPlayerItem *item = [[AVPlayerItem alloc]initWithURL:url];
         [itemArr addObject:item];
+        
+        CGFloat duration = CMTimeGetSeconds(  item.asset.duration);
+        [ZNAudioPlayerUtil shareInstance].totalDuration += duration;
     }
     return itemArr;
 }
@@ -57,6 +63,7 @@
     if (self.queuePlayer) {
         [self.queuePlayer removeAllItems];
         self.queuePlayer = nil;
+        self.totalDuration = 0;
     }
 }
 
@@ -84,6 +91,13 @@
         CMTime cmtime = CMTimeMake(time, timeScale);
         [self.queuePlayer seekToTime:cmtime];
     }
+}
+
+- (NSInteger)totalTimeOfRecord{
+    if (self.queuePlayer) {
+        return self.totalDuration;
+    }
+    return 0;
 }
 
 @end
