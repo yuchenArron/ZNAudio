@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ZNAudioPlayerUtil.h"
+
 @interface ZZDeviceManager : NSObject{
     // recorder
     NSDate              *_recorderStartDate;

@@ -21,4 +21,5 @@
 // 停止当前播放音频
 + (void)stopCurrentPlaying;
 - (void)stopCurrentPlaying;
+
 @end

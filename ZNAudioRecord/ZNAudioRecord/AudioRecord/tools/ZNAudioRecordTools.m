@@ -22,7 +22,7 @@
     NSInteger second = 0;
     
     hour = count / 60 / 60;
-    min = (count - hour * 60) / 60;
+    min = (count - hour * 60 * 60) / 60;
     second = count % 60;
     
     if (1) {
