@@ -17,4 +17,6 @@ typedef void(^failure)();
 
 + (void)uploadRecordFile:(NSString*)filePath type:(NSString*)type progress:(progress)progress success:(successful)success failure:(failure)failure;
 
+//
+
 @end

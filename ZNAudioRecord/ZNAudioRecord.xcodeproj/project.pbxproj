@@ -24,6 +24,9 @@
 		043A23C41F56889800E0153F /* ZNAudioRecordTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 043A23C31F56889800E0153F /* ZNAudioRecordTools.m */; };
 		04A9257C1F57A9D40080B3BA /* ZZAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A9257B1F57A9D40080B3BA /* ZZAudioPlayerUtil.m */; };
 		04A928741F580F770080B3BA /* ZNAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A928731F580F770080B3BA /* ZNAudioPlayerUtil.m */; };
+		04A928881F5901EF0080B3BA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A928831F5901EF0080B3BA /* AFHTTPRequestOperation.m */; };
+		04A928891F5901EF0080B3BA /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A928851F5901EF0080B3BA /* AFHTTPRequestOperationManager.m */; };
+		04A9288A1F5901EF0080B3BA /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A928871F5901EF0080B3BA /* AFURLConnectionOperation.m */; };
 		9085EECD5D81EBA57C8A68CC /* libPods-ZNAudioRecordTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B61071F7B4FD1809580C6F21 /* libPods-ZNAudioRecordTests.a */; };
 		99FDB53D4ED53E3D88373298 /* libPods-ZNAudioRecord.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8455019C18CF898DB8C52564 /* libPods-ZNAudioRecord.a */; };
 		F224B570DD8105416CC66583 /* libPods-ZNAudioRecordUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 954B90DB6CBF3A23509A112B /* libPods-ZNAudioRecordUITests.a */; };
@@ -81,6 +84,12 @@
 		04A9257B1F57A9D40080B3BA /* ZZAudioPlayerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAudioPlayerUtil.m; sourceTree = "<group>"; };
 		04A928721F580F770080B3BA /* ZNAudioPlayerUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNAudioPlayerUtil.h; sourceTree = "<group>"; };
 		04A928731F580F770080B3BA /* ZNAudioPlayerUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNAudioPlayerUtil.m; sourceTree = "<group>"; };
+		04A928821F5901EF0080B3BA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		04A928831F5901EF0080B3BA /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		04A928841F5901EF0080B3BA /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		04A928851F5901EF0080B3BA /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		04A928861F5901EF0080B3BA /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		04A928871F5901EF0080B3BA /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		30E38AC82A3A56B9920CAEE7 /* Pods-ZNAudioRecord.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNAudioRecord.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZNAudioRecord/Pods-ZNAudioRecord.release.xcconfig"; sourceTree = "<group>"; };
 		398B26E3260420F4C76DBDEF /* Pods-ZNAudioRecordUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNAudioRecordUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZNAudioRecordUITests/Pods-ZNAudioRecordUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6E7E1B297B69F184C6DEE21B /* Pods-ZNAudioRecordTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNAudioRecordTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZNAudioRecordTests/Pods-ZNAudioRecordTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +198,7 @@
 		0404E7231F5567B5004E96FE /* AudioRecord */ = {
 			isa = PBXGroup;
 			children = (
+				04A928811F5901C00080B3BA /* AFNetworkingOPeration */,
 				043A23C11F56885C00E0153F /* tools */,
 				0404E7261F55680A004E96FE /* UploadUtil */,
 				0404E7251F5567EA004E96FE /* AudioUtil */,
@@ -240,6 +250,20 @@
 				043A23C31F56889800E0153F /* ZNAudioRecordTools.m */,
 			);
 			path = tools;
+			sourceTree = "<group>";
+		};
+		04A928811F5901C00080B3BA /* AFNetworkingOPeration */ = {
+			isa = PBXGroup;
+			children = (
+				04A928821F5901EF0080B3BA /* AFHTTPRequestOperation.h */,
+				04A928831F5901EF0080B3BA /* AFHTTPRequestOperation.m */,
+				04A928841F5901EF0080B3BA /* AFHTTPRequestOperationManager.h */,
+				04A928851F5901EF0080B3BA /* AFHTTPRequestOperationManager.m */,
+				04A928861F5901EF0080B3BA /* AFURLConnectionOperation.h */,
+				04A928871F5901EF0080B3BA /* AFURLConnectionOperation.m */,
+			);
+			name = AFNetworkingOPeration;
+			path = AFNetworkingOperation;
 			sourceTree = "<group>";
 		};
 		1282A4192B15144642807A82 /* Pods */ = {
@@ -549,12 +573,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A9288A1F5901EF0080B3BA /* AFURLConnectionOperation.m in Sources */,
+				04A928881F5901EF0080B3BA /* AFHTTPRequestOperation.m in Sources */,
 				043A23C41F56889800E0153F /* ZNAudioRecordTools.m in Sources */,
 				04A928741F580F770080B3BA /* ZNAudioPlayerUtil.m in Sources */,
 				0404E6F81F55677D004E96FE /* ViewController.m in Sources */,
 				0404E72F1F556D1A004E96FE /* ZZAudioRecorderUtil.m in Sources */,
 				0404E6F51F55677D004E96FE /* AppDelegate.m in Sources */,
 				0404E6F21F55677D004E96FE /* main.m in Sources */,
+				04A928891F5901EF0080B3BA /* AFHTTPRequestOperationManager.m in Sources */,
 				0404E7371F557C6F004E96FE /* ZNAudioRecordManager.m in Sources */,
 				0404E7291F556BF5004E96FE /* SpectrumView.m in Sources */,
 				0404E7321F55713B004E96FE /* ZNRecordUploadNetwork.m in Sources */,
